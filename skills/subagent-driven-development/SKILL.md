@@ -274,6 +274,14 @@ a ledger file, not only in todos.
 
 ## Example Workflow
 
+In the trace below, every `[bracketed]` line is an action **you** perform —
+including dispatching a subagent — and every `Implementer:`, `Task reviewer:`,
+`Fixer:`, and `Final reviewer:` line is the report that dispatched subagent
+**returned to you**, not text you write. This is a record of real dispatches and
+their returns, not a script to narrate. If you are about to write a subagent's
+result and no dispatch preceded it, stop and dispatch — never narrate the result
+you expected.
+
 ```
 You: I'm using Subagent-Driven Development to execute this plan.
 
@@ -349,6 +357,10 @@ Done!
 - Accept "close enough" on spec compliance (reviewer found spec issues = not done)
 - Skip review loops (reviewer found issues = implementer fixes = review again)
 - Let implementer self-review replace actual review (both are needed)
+- Narrate a subagent's result you did not receive — every "the implementer
+  did X" or "the reviewer approved" must be the return value of a real
+  dispatch in this same turn. If you cannot dispatch, stop; never write the
+  result you expected to get back
 - Tell a reviewer what not to flag, or pre-rate a finding's severity in the
   dispatch prompt ("treat it as Minor at most") — the plan's example code is
   a starting point, not evidence that its weaknesses were chosen
